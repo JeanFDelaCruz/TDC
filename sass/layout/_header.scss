@@ -1,0 +1,205 @@
+.header {
+  max-width: 186rem;
+  max-height: 90rem;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 10rem;
+  &__navigation {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 9.6rem;
+    font-size: 2.4rem;
+
+    &__logo-container {
+      width: 100rem;
+    }
+
+    &__logo {
+      max-width: 100%;
+    }
+
+    &__list-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      list-style: none;
+      gap: 2.4rem;
+    }
+
+    &__links,
+    &__links:link,
+    &__links:visited {
+      text-decoration: none;
+      color: $color-white;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    &__links:hover,
+    &__links:active {
+      color: $color-secondary;
+    }
+
+    &__links.btn {
+      color: $color-primary;
+      background-color: $color-white;
+      padding: 1.2rem 2.4rem;
+    }
+
+    &__links.btn:hover,
+    &__links.btn:active {
+      color: $color-white;
+      background-color: $color-primary;
+    }
+  }
+
+  &__bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-height: 100%;
+    max-width: 100%;
+    opacity: 1;
+    z-index: -1;
+    object-fit: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+    overflow: hidden;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+      background-image: radial-gradient(
+        circle at 100% 0%,
+        $color-primary,
+        rgba($color-primary, 0.5),
+        rgba($color-secondary, 0.5)
+      );
+    }
+  }
+
+  &__content {
+    // background-color: red;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+    &__title {
+      width: 100rem;
+      height: 40rem;
+      padding: 4.8rem;
+
+      display: flex;
+      flex-direction: column;
+      gap: 4.8rem;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+      grid-column: 1 span 2;
+      // background-color: rgba(255, 255, 255, 0.92);
+
+      margin: 4.8rem 4.8rem;
+      font-size: 6.4rem;
+
+      color: #222;
+
+      border-radius: 2.4rem;
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      transform: skew(45deg);
+
+      & span {
+        // background-color: red;
+        padding: 1.6rem;
+        background-color: rgba(255, 255, 255, 0.92);
+        font-size: 4.8rem;
+        transform: skew(-53deg);
+      }
+    }
+
+    &__image-container {
+      text-align: center;
+      max-width: 80rem;
+      // background-color: orange;
+      grid-column: 2 span -1;
+      grid-column: 2 / -1;
+      grid-row: 1 / -1;
+    }
+
+    &__image {
+      max-width: 100%;
+      border-radius: 20rem;
+      clip-path: polygon(0 0, 100% 0, 90% 86%, 0 93.5%);
+    }
+
+    &__clients-container {
+      grid-column: 2;
+      grid-row: 2 / 2;
+      // background-color: red;
+
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      width: 100%;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-size: 1.8rem;
+
+      padding: 4.8rem;
+    }
+
+    &__clients {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      list-style: none;
+
+      &__image-container {
+        max-width: 8rem;
+
+        &:not(:last-child) {
+          margin-right: -2rem;
+        }
+      }
+
+      &-text {
+        padding: 1.2rem;
+        border-radius: 1rem;
+        // background-color: rgba(255, 255, 255, 0.9);
+      }
+    }
+
+    &__clients-image {
+      display: inline-block;
+      box-sizing: content-box;
+      border: 0.5rem solid #fff;
+      border-radius: 50%;
+      max-width: 100%;
+    }
+  }
+
+  &__button-container {
+    // background-color: red;
+    max-height: 4.8rem;
+    padding: 4.8rem;
+
+    margin-top: 50rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6.4rem;
+
+    font-size: 2.4rem;
+
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+}

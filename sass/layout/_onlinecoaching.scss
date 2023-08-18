@@ -1,0 +1,55 @@
+.section__online__coaching {
+  background-color: $color-background-dark;
+  max-width: 100%;
+  height: 70rem;
+  padding: 9.6rem;
+}
+
+.coaching-card-container {
+  max-width: 140rem;
+}
+
+.coaching-card-holder {
+  margin-top: 4.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  row-gap: 4.8rem;
+  column-gap: 4.8rem;
+}
+
+.card {
+  width: 50rem;
+  height: 50rem;
+  background-color: $color-white;
+
+  box-shadow: 0 0.1rem 1rem rgb(0, 0, 0);
+
+  &__holder {
+    font-size: 8rem;
+    padding: 2.4rem;
+    color: $color-primary;
+  }
+
+  &__icon {
+    text-align: center;
+    transform: skew(-5deg);
+  }
+
+  &__title {
+    font-size: 2.8rem;
+    text-align: center;
+
+    border-bottom: solid 0.2rem $color-primary;
+    padding-bottom: 1.2rem;
+    margin-bottom: 2rem;
+    color: $color-dark;
+    transform: skew(-10deg);
+  }
+
+  &__description {
+    color: $color-dark;
+    font-size: 1.8rem;
+    padding: 0 1.6rem;
+  }
+}

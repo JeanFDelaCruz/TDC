@@ -1,0 +1,94 @@
+.section__biography__container {
+  padding-top: 10rem;
+  max-width: 100%;
+  background-color: $color-white;
+}
+
+.biography--container {
+  max-width: 186rem;
+  display: grid;
+  row-gap: 2.4rem;
+  padding: 4.8rem;
+}
+
+.biography {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  &__contexts {
+    background-color: $color-white-shade;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4.8rem;
+
+    padding: 4.8rem;
+  }
+
+  &__header {
+    font-size: 3.2rem;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 1.6rem;
+    font-size: 2rem;
+    justify-content: space-between;
+    color: $color-dark;
+
+    & span {
+      display: block;
+    }
+  }
+}
+
+.author {
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+  line-height: 4.8rem;
+
+  &__image-container {
+    max-width: 50rem;
+  }
+
+  &__image {
+    width: 50rem;
+    height: 50rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &__name {
+    font-size: 3.2rem;
+    font-weight: 500;
+  }
+
+  &__icons {
+    font-size: 4rem;
+    text-decoration: none;
+    color: $color-primary;
+    transition: all 0.3s;
+    &:visited {
+      font-size: 3.2rem;
+      text-decoration: none;
+      color: $color-secondary;
+    }
+
+    &:hover,
+    &:active {
+      scale: 1.5;
+    }
+
+    &__container {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      gap: 2.4rem;
+    }
+  }
+}

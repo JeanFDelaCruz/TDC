@@ -1,0 +1,16 @@
+.subheader {
+  background-color: ($color-white);
+  max-width: 100rem;
+  text-align: center;
+  padding: 1rem;
+
+  transform: skew(-6deg);
+
+  &__primary {
+    font-size: 5.2rem;
+  }
+
+  &__secondary {
+    font-size: 6rem;
+  }
+}

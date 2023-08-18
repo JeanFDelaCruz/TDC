@@ -1,0 +1,54 @@
+.dots__container {
+  max-width: 40rem;
+  grid-column: 2 / -1;
+  position: relative;
+}
+
+.dots__list {
+  list-style: none;
+  display: flex;
+  gap: 2.4rem;
+}
+
+.dots {
+  width: 1.6rem;
+  height: 1.6rem;
+  background-color: $color-white-shade;
+  border: solid 0.1rem rgb(0, 0, 0);
+  border-radius: 50%;
+  box-shadow: 0 0.1rem 0.4rem rgb(0, 0, 0);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.dots--button {
+  display: inline-block;
+  border: none;
+  background-color: transparent;
+  font-size: 2.4rem;
+}
+
+.dots__button-left {
+  position: absolute;
+  top: -0.3rem;
+  left: -50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.dots__button-left:active {
+  left: -53%;
+}
+
+.dots__button-right {
+  position: absolute;
+  top: -0.3rem;
+  right: -50%;
+  transform: translateX(50%);
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.dots__button-right:active {
+  right: -53%;
+}

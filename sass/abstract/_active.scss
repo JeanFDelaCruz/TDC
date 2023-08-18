@@ -1,0 +1,8 @@
+.active {
+  background-image: linear-gradient(
+    rgba($color-primary, 0.97),
+    rgba($color-secondary, 0.97)
+  );
+  transform: translateY(-0.2rem);
+  transition: all 0.3s;
+}
