@@ -17,8 +17,18 @@
 .hidden {
   display: none; }
 
+.hidden-blog {
+  visibility: none;
+  opacity: 0;
+  pointer-events: none; }
+
 .active {
   background-image: linear-gradient(rgba(25, 113, 194, 0.97), rgba(165, 216, 255, 0.97));
+  transform: translateY(-0.2rem);
+  transition: all 0.3s; }
+
+.dots__dot--active {
+  background-image: linear-gradient(#ebfbee, #69db7c);
   transform: translateY(-0.2rem);
   transition: all 0.3s; }
 
@@ -147,11 +157,11 @@ body {
   gap: 2.4rem; }
 
 .dots {
-  width: 1.6rem;
-  height: 1.6rem;
+  width: 4rem;
+  height: 1rem;
   background-color: #e9e9e9;
   border: solid 0.1rem black;
-  border-radius: 50%;
+  border-radius: 2rem;
   box-shadow: 0 0.1rem 0.4rem black;
   cursor: pointer;
   transition: all 0.3s; }
@@ -183,6 +193,27 @@ body {
 
 .dots__button-right:active {
   right: -53%; }
+
+.dots__container--slider {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.4rem;
+  bottom: -3%;
+  right: 50%;
+  gap: 1.2rem;
+  transform: translateX(50%); }
+
+.dots__dot {
+  width: 1.6rem;
+  height: 1.6rem;
+  background-color: #ebfbee;
+  border: solid 0.1rem black;
+  border-radius: 50%;
+  box-shadow: 0 0.1rem 0.4rem black;
+  cursor: pointer;
+  transition: all 0.3s; }
 
 .cta {
   display: flex;
@@ -422,11 +453,47 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 4.8rem;
+  height: 90rem;
   padding: 6.4rem 0;
-  background-color: #a5d8ff; }
+  background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.5), #ebfbee); }
+
+.section__testimonial__slider {
+  position: relative;
+  max-width: 186rem;
+  width: 186rem;
+  height: 80rem;
+  display: flex;
+  gap: 20rem;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; }
+
+.testimonial--button {
+  position: absolute;
+  font-size: 10rem;
+  width: 8rem;
+  height: 8rem;
+  background: transparent;
+  border-radius: 50%;
+  border: none;
+  color: #1971c2;
+  cursor: pointer;
+  transition: all 0.3s; }
+  .testimonial--button:hover {
+    color: #a5d8ff; }
+
+.testimonial--button-next {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%); }
+
+.testimonial--button-prev {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%); }
 
 .testimonial__container {
+  position: absolute;
   max-width: 140rem;
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -438,7 +505,8 @@ body {
   transition: all 0.1s;
   backface-visibility: hidden;
   background-color: #fff;
-  border-radius: 2.4rem; }
+  border-radius: 2.4rem;
+  transition: transform 1s; }
 
 .testimonial {
   max-width: 60rem;

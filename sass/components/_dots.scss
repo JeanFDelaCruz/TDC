@@ -11,11 +11,11 @@
 }
 
 .dots {
-  width: 1.6rem;
-  height: 1.6rem;
+  width: 4rem;
+  height: 1rem;
   background-color: $color-white-shade;
   border: solid 0.1rem rgb(0, 0, 0);
-  border-radius: 50%;
+  border-radius: 2rem;
   box-shadow: 0 0.1rem 0.4rem rgb(0, 0, 0);
   cursor: pointer;
   transition: all 0.3s;
@@ -51,4 +51,30 @@
 
 .dots__button-right:active {
   right: -53%;
+}
+
+// TESTIMONIAL CONTAINER SLIDER DOTS //
+.dots__container--slider {
+  position: absolute;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.4rem;
+  bottom: -3%;
+  right: 50%;
+  gap: 1.2rem;
+  transform: translateX(50%);
+}
+
+// THE DOTS
+.dots__dot {
+  width: 1.6rem;
+  height: 1.6rem;
+  background-color: $color-green-light;
+  border: solid 0.1rem rgb(0, 0, 0);
+  border-radius: 50%;
+  box-shadow: 0 0.1rem 0.4rem rgb(0, 0, 0);
+  cursor: pointer;
+  transition: all 0.3s;
 }

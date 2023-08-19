@@ -6,3 +6,12 @@
   transform: translateY(-0.2rem);
   transition: all 0.3s;
 }
+
+.dots__dot--active {
+  background-image: linear-gradient(
+    rgba($color-green-light, 1),
+    rgba($color-green-dark, 1)
+  );
+  transform: translateY(-0.2rem);
+  transition: all 0.3s;
+}
