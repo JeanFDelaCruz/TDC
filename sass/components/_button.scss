@@ -12,6 +12,10 @@
   background-color: #fff;
   transition: all 0.3s;
   border: 0.1rem solid #fff;
+
+  @media screen and (max-width: 25.625em) {
+    font-size: 2rem;
+  }
 }
 
 .btn:hover,
@@ -98,4 +102,10 @@
 .btn--more-post.btn--blog-small {
   font-size: 2.4rem;
   border-radius: 1rem;
+}
+
+// HEADER BUTTON //
+#nav-contact--btn {
+  font-size: 2rem;
+  padding: 0.8rem 1.6rem;
 }

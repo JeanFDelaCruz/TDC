@@ -9,6 +9,10 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 2.4rem;
+  @media screen and (max-width: 37.5em) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .blog__big {
@@ -46,6 +50,10 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 2.4rem;
+  @media screen and (max-width: 37.5em) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .blog__small {
@@ -76,5 +84,10 @@
   &__text {
     font-size: 1.6rem;
     color: $color-dark-shade;
+  }
+  @media screen and (max-width: 37.5em) {
+    display: flex;
+    flex-direction: column;
+    max-width: 60rem;
   }
 }

@@ -13,11 +13,20 @@
     rgba($color-white, 0.5),
     rgba($color-green-light, 1)
   );
+
+  @media screen and (max-width: 206.7em) {
+    height: 120rem;
+  }
+  @media screen and (max-width: 37.5em) {
+    height: 140rem;
+  }
+  @media screen and (max-width: 25.625em) {
+    height: 160rem;
+  }
 }
 
 .section__testimonial__slider {
   position: relative;
-  max-width: 186rem;
   width: 186rem;
   height: 80rem;
 
@@ -26,6 +35,26 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  @media screen and (max-width: 206.7em) {
+    width: 150rem;
+    height: 90rem;
+  }
+  @media screen and (max-width: 95em) {
+    width: 100rem;
+    height: 90rem;
+  }
+
+  @media screen and (max-width: 59.3em) {
+    height: 100rem;
+  }
+  @media screen and (max-width: 43em) {
+    width: 80rem;
+    height: 90rem;
+  }
+  @media screen and (max-width: 37.5em) {
+    max-width: 50rem;
+    height: 130rem;
+  }
 }
 
 // Slider Button //
@@ -36,7 +65,6 @@
   height: 8rem;
   background: transparent;
   border-radius: 50%;
-  // padding: 2.4rem;
   border: none;
   color: $color-primary;
   cursor: pointer;
@@ -45,21 +73,57 @@
   &:hover {
     color: $color-secondary;
   }
+
+  @media screen and (max-width: 25.625em) {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
 }
 .testimonial--button-next {
   top: 50%;
-  right: 0;
+  right: 10%;
   transform: translateY(-50%);
+
+  @media screen and (max-width: 206.7em) {
+    transform: translateX(-1rem);
+  }
+  @media screen and (max-width: 95em) {
+    right: 0;
+  }
+  @media screen and (max-width: 59.3em) {
+    right: 8%;
+  }
+  @media screen and (max-width: 37.5em) {
+    right: -3%;
+  }
 }
 .testimonial--button-prev {
   top: 50%;
-  left: 0;
+  left: 10%;
   transform: translateY(-50%);
+  z-index: 1;
+
+  @media screen and (max-width: 206.7em) {
+    transform: translateX(1rem);
+  }
+  @media screen and (max-width: 95em) {
+    left: -2%;
+  }
+  @media screen and (max-width: 59.3em) {
+    left: 6%;
+  }
+  @media screen and (max-width: 43em) {
+    left: 4%;
+  }
+  @media screen and (max-width: 37.5em) {
+    left: -6%;
+  }
 }
 
 .testimonial__container {
   position: absolute;
-  max-width: 140rem;
+  width: 140rem;
   display: grid;
   grid-template-columns: 1fr 2fr;
   justify-content: center;
@@ -73,18 +137,49 @@
   background-color: $color-white;
   border-radius: 2.4rem;
   transition: transform 1s;
+
+  @media screen and (max-width: 206.7em) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100rem;
+  }
+  @media screen and (max-width: 59.3em) {
+    width: 70rem;
+  }
+  @media screen and (max-width: 37.5em) {
+    width: 50rem;
+    height: 100rem;
+  }
+
+  @media screen and (max-width: 25.625em) {
+    width: 40rem;
+    height: 120rem;
+  }
 }
 
 .testimonial {
-  max-width: 60rem;
-  padding: 2.4rem;
-
-  line-height: 2.5;
-  border-right: solid 0.1rem #000;
-
   &__image {
-    max-width: 100%;
+    width: 100%;
     border-radius: 0.4rem;
+
+    &__container {
+      max-width: 60rem;
+
+      padding: 2.4rem;
+
+      line-height: 2.5;
+      border-right: solid 0.1rem #000;
+      // max-width: 20rem;
+      @media screen and (max-width: 206.7em) {
+        border-right: none;
+        max-width: 50rem;
+      }
+      @media screen and (max-width: 25.625em) {
+        max-width: 30rem;
+      }
+    }
   }
 
   &__name {
@@ -96,11 +191,28 @@
   }
 
   &__story {
-    max-width: 100%;
+    width: 90rem;
+    height: 40rem;
     padding: 2.4rem;
     font-size: 2.4rem;
     color: $color-dark;
     position: relative;
+    @media screen and (max-width: 75em) {
+      font-size: 2rem;
+    }
+
+    @media screen and (max-width: 59.3em) {
+      width: 60rem;
+      height: 20;
+    }
+    @media screen and (max-width: 37.5em) {
+      width: 40rem;
+      height: 60rem;
+    }
+    @media screen and (max-width: 35.625em) {
+      max-width: 35rem;
+      height: 60rem;
+    }
   }
 
   &__quotation {
@@ -110,5 +222,18 @@
     font-size: 50rem;
     color: rgba($color-green-light, 0.97);
     z-index: -1;
+  }
+
+  @media screen and (max-width: 206.7em) {
+    max-width: 50rem;
+    border-right: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.4rem;
+  }
+  @media screen and (max-width: 25.625em) {
+    display: flex;
+    flex-direction: column;
   }
 }

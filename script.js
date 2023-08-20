@@ -1,3 +1,4 @@
+"use strict";
 ///////////////////////////////////
 // SLIDER FOR TESTIMONIAL CONTAINERS //
 ///////////////////////////////////
@@ -105,98 +106,150 @@ const contentBtnRight = document.querySelector(".dots__button-right");
 const contentBtnLeft = document.querySelector(".dots__button-left");
 const contentDotsContainer = document.querySelector(".dots____list");
 
-const testimonialContainers = document.querySelectorAll(
-  ".testimonial__container"
-);
+const innerSlider = function () {
+  const testimonialContainers = document.querySelectorAll(
+    ".testimonial__container"
+  );
 
-testimonialContainers.forEach((container) => {
-  const testimonials = container.querySelectorAll(".testimonial__story__text");
-  const dots = container.querySelectorAll(".dots");
-  const dotButtons = container.querySelectorAll(".dots__list li");
-  const backButton = container.querySelector(".dots__button-left");
-  const forwardButton = container.querySelector(".dots__button-right");
-  let currentIndex = 0;
+  testimonialContainers.forEach((container) => {
+    const testimonials = container.querySelectorAll(
+      ".testimonial__story__text"
+    );
+    const dots = container.querySelectorAll(".dots");
+    const dotButtons = container.querySelectorAll(".dots__list li");
+    const backButton = container.querySelector(".dots__button-left");
+    const forwardButton = container.querySelector(".dots__button-right");
+    let currentIndex = 0;
 
-  function showPage(index) {
-    testimonials.forEach((testimonial) => testimonial.classList.add("hidden"));
-    testimonials[index].classList.remove("hidden");
-    dotButtons.forEach((dot) => dot.classList.remove("active"));
-    dotButtons[index].classList.add("active");
-  }
+    function showPage(index) {
+      testimonials.forEach((testimonial) =>
+        testimonial.classList.add("hidden")
+      );
+      testimonials[index].classList.remove("hidden");
+      dotButtons.forEach((dot) => dot.classList.remove("active"));
+      dotButtons[index].classList.add("active");
+    }
 
-  backButton.addEventListener("click", () => {
-    currentIndex =
-      (currentIndex - 1 + testimonials.length) % testimonials.length;
-    showPage(currentIndex);
-  });
-
-  forwardButton.addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % testimonials.length;
-    showPage(currentIndex);
-  });
-
-  dotButtons.forEach((dot, index) => {
-    dot.addEventListener("click", () => {
-      currentIndex = index;
+    backButton.addEventListener("click", () => {
+      currentIndex =
+        (currentIndex - 1 + testimonials.length) % testimonials.length;
       showPage(currentIndex);
     });
+
+    forwardButton.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % testimonials.length;
+      showPage(currentIndex);
+    });
+
+    dotButtons.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        currentIndex = index;
+        showPage(currentIndex);
+      });
+    });
+
+    showPage(currentIndex);
+  });
+};
+
+innerSlider();
+///////////////////////////////////
+// END OF SLIDER FOR TESTIMONIAL BLOGS //
+///////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////
+// SMOOTH SCROLL //
+///////////////////////////////////
+
+// THIS IS FOR THE NAVIGATION BUTTONS
+// USES EVENT DELEGATION FOR EVENT PROPAGATION FOR BETTER USAGE OF POWER
+document
+  .querySelector(".header__navigation__list-container")
+  .addEventListener("click", function (e) {
+    e.preventDefault();
+
+    // Matching strategy
+    if (e.target.classList.contains("header__navigation__links")) {
+      const id = e.target.getAttribute("href");
+      document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+    }
   });
 
-  showPage(currentIndex);
+// THIS IS FOR THE HERO SECTION BUTTONS
+document
+  .querySelector(".header__button-container")
+  .addEventListener("click", function (e) {
+    e.preventDefault();
+
+    // Matching strategy
+    if (e.target.classList.contains("btn")) {
+      const id = e.target.getAttribute("href");
+      document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+    }
+  });
+
+///////////////////////////////////
+// END OF SMOOTH SCROLL //
+///////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////
+// NAV BUTTON FOR MOBILE //
+///////////////////////////////////
+
+const navMobile = function () {
+  const headerNav = document.querySelector(".header");
+
+  const mobileButton = document.querySelector(".btn-mobile-nav");
+  mobileButton.addEventListener("click", function () {
+    headerNav.classList.toggle("nav-open");
+  });
+};
+navMobile();
+///////////////////////////////////
+// END OF BUTTON FOR MOBILE //
+///////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////
+// STICKY NAVIGATION //
+///////////////////////////////////
+
+const headerNav = document.querySelector(".header");
+const navigation = document.querySelector(".header__navigation");
+
+const stickyNav = function (entries) {
+  const [entry] = entries;
+
+  if (!entry.isIntersecting) navigation.classList.add("sticky");
+  else navigation.classList.remove("sticky");
+};
+
+const headerObserver = new IntersectionObserver(stickyNav, {
+  root: null,
+  threshold: 0,
+  rootMargin: `-${5}px`,
 });
-// const createDots = function () {
-//   contentSlides.forEach(function (_, i) {
-//     dotContainer.insertAdjacentHTML(
-//       "beforeend",
-//       `
-//     <button class="dots" data-slide="${i}"></button>
-//     `
-//     );
-//   });
-// };
 
-// const activateDot = function (slide) {
-//   document
-//     .querySelectorAll("dots")
-//     .forEach((dot) => dot.classList.remove("active"));
+headerObserver.observe(headerNav);
 
-//   document
-//     .querySelector(`.dots[data-slide="${slide}"]`)
-//     .classList.add("active");
-// };
+///////////////////////////////////
+//END OF STICKY NAVIGATION //
+///////////////////////////////////
+////////////////////////////////////////////////////////////////////
 
-// const goToSlide = function (slide) {
-//   slides.forEach((s, i) => s.classList.toggle("hidden"));
-// };
+///////////////////////////////////
+// SET CURRENT YEAR //
+///////////////////////////////////
+const yearEl = document.querySelector(".footer__year");
+const currentYear = new Date().getFullYear();
+yearEl.textContent = currentYear;
 
-// // NEXT SLIDE
-
-// const nextSlide = function () {
-//   if (curSlide === maxSlide - 1) {
-//     curSlide = 0;
-//   } else {
-//     curSlide++;
-//   }
-
-//   goToSlide(curSlide);
-//   activateDot(curSlide);
-// };
-
-// const prevSlide = function () {
-//   if (curSlide === 0) {
-//     curSlide = maxSlide - 1;
-//   } else {
-//     curSlide--;
-//   }
-// };
-
-// const init = function () {
-//   goToSlide(0);
-//   createDots();
-//   activateDot(0);
-// };
-// init();
-
-// //EVENT HANDLERS FOR CONTENT OF TESTIMONIALS //
-// contentBtnRight.addEventListener("click", nextSlide);
-// contentBtnLeft.addEventListener("click", prevSlide);
+///////////////////////////////////
+//END OF SET CURRENT YEAR //
+///////////////////////////////////
+//////////////////////////////////////////////////////////////////////

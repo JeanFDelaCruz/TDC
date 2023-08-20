@@ -2,6 +2,9 @@
   max-width: 40rem;
   grid-column: 2 / -1;
   position: relative;
+  @media screen and (max-width: 25.625em) {
+    bottom: -8%;
+  }
 }
 
 .dots__list {
@@ -54,6 +57,7 @@
 }
 
 // TESTIMONIAL CONTAINER SLIDER DOTS //
+
 .dots__container--slider {
   position: absolute;
 
@@ -61,10 +65,14 @@
   justify-content: center;
   align-items: center;
   padding: 2.4rem;
-  bottom: -3%;
+  bottom: -1%;
   right: 50%;
   gap: 1.2rem;
   transform: translateX(50%);
+
+  @media screen and (max-width: 59.3em) {
+    bottom: -1%;
+  }
 }
 
 // THE DOTS

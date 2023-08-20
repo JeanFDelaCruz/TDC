@@ -10,6 +10,9 @@
   margin: 0 auto;
 
   padding: 2.4rem;
+  @media screen and (max-width: 59em) {
+    flex-direction: column;
+  }
 }
 
 .footer {
@@ -40,6 +43,14 @@
     font-size: 1.6rem;
     color: inherit;
     margin-left: 0;
+    @media screen and (max-width: 59em) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 4.8rem;
+      text-align: center;
+    }
   }
 
   &__list {
@@ -89,5 +100,11 @@
   &__link {
     text-decoration: none;
     color: $color-primary;
+  }
+  @media screen and (max-width: 59em) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 }

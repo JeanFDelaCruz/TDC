@@ -8,9 +8,30 @@
 
   &__primary {
     font-size: 5.2rem;
+    @media screen and (max-width: 95em) {
+      font-size: 4.8rem;
+    }
+    @media screen and (max-width: 43em) {
+      font-size: 4rem;
+    }
+    @media screen and (max-width: 25.625em) {
+      font-size: 3.6rem;
+    }
   }
 
   &__secondary {
     font-size: 6rem;
+    @media screen and (max-width: 95em) {
+      font-size: 5.2rem;
+    }
+    @media screen and (max-width: 43em) {
+      font-size: 4rem;
+    }
+    @media screen and (max-width: 37.5em) {
+      font-size: 3.4rem;
+    }
+    @media screen and (max-width: 25.625em) {
+      font-size: 2.8rem;
+    }
   }
 }

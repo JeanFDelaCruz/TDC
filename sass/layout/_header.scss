@@ -4,6 +4,7 @@
   position: relative;
   overflow: hidden;
   margin-bottom: 10rem;
+
   &__navigation {
     max-width: 100%;
     display: flex;
@@ -17,6 +18,7 @@
 
     &__logo {
       max-width: 100%;
+      height: 9rem;
     }
 
     &__list-container {
@@ -51,6 +53,39 @@
     &__links.btn:active {
       color: $color-white;
       background-color: $color-primary;
+    }
+
+    @media screen and (max-width: 59em) {
+      .main-nav {
+        background-color: rgba(255, 255, 255, 0.9);
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(10px);
+        position: absolute;
+
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        transform: translateX(100%);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.5s ease-in;
+
+        /* Hide navigation */
+        /* Allows NO transitions at all */
+        /* display: none; */
+
+        /* 1) Hide it visually */
+        opacity: 0;
+
+        /* 2) Make it unaccessible to mouse and keyboard */
+        pointer-events: none;
+
+        /* 3) Hide it from screen readers */
+        visibility: hidden;
+      }
     }
   }
 
@@ -90,9 +125,17 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
 
+    &.sticky {
+      margin-top: 9.6rem;
+    }
+
+    @media screen and (max-width: 66.25em) {
+      grid-template-columns: 1fr;
+    }
+
     &__title {
       width: 100rem;
-      height: 40rem;
+      // height: 40rem;
       padding: 4.8rem;
 
       display: flex;
@@ -116,27 +159,57 @@
       transform: skew(45deg);
 
       & span {
-        // background-color: red;
         padding: 1.6rem;
         background-color: rgba(255, 255, 255, 0.92);
         font-size: 4.8rem;
         transform: skew(-53deg);
+        @media screen and (max-width: 95em) {
+          font-size: 3.4rem;
+          max-width: 60rem;
+          height: 40rem;
+        }
+
+        @media screen and (max-width: 66.25em) {
+          font-size: 3rem;
+          max-width: 50rem;
+          height: 30rem;
+          grid-column: 1 span -1;
+        }
+        @media screen and (max-width: 37.5em) {
+          font-size: 2.8rem;
+          max-width: 40rem;
+          height: 20rem;
+          transform: skew(0);
+        }
+      }
+
+      @media screen and (max-width: 95em) {
+        width: 60rem;
+        height: 40rem;
+      }
+      @media screen and (max-width: 37.5em) {
+        width: 60rem;
+        height: 40rem;
+        transform: skew(0);
       }
     }
 
     &__image-container {
       text-align: center;
-      max-width: 80rem;
+      max-width: 45rem;
       // background-color: orange;
       grid-column: 2 span -1;
       grid-column: 2 / -1;
       grid-row: 1 / -1;
+
+      @media screen and (max-width: 66.25em) {
+        display: none;
+      }
     }
 
     &__image {
       max-width: 100%;
       border-radius: 20rem;
-      clip-path: polygon(0 0, 100% 0, 90% 86%, 0 93.5%);
     }
 
     &__clients-container {
@@ -153,6 +226,12 @@
       font-size: 1.8rem;
 
       padding: 4.8rem;
+      @media screen and (max-width: 66.25em) {
+        font-size: 2rem;
+        max-width: 50rem;
+        height: 30rem;
+        grid-column: 1 / span 3;
+      }
     }
 
     &__clients {
@@ -172,7 +251,14 @@
       &-text {
         padding: 1.2rem;
         border-radius: 1rem;
-        // background-color: rgba(255, 255, 255, 0.9);
+        @media screen and (max-width: 66.25em) {
+          width: 60rem;
+          background-color: rgba(255, 255, 255, 0.9);
+        }
+        @media screen and (max-width: 37.5em) {
+          width: 30rem;
+          background-color: rgba(255, 255, 255, 0.9);
+        }
       }
     }
 
@@ -182,6 +268,13 @@
       border: 0.5rem solid #fff;
       border-radius: 50%;
       max-width: 100%;
+    }
+
+    @media screen and (max-width: 37.5em) {
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: center;
+      justify-content: center;
     }
   }
 
@@ -201,5 +294,12 @@
 
     grid-column: 1 / 2;
     grid-row: 1 / 2;
+  }
+
+  @media screen and (max-width: 75em) {
+    max-height: 95rem;
+  }
+  @media screen and (max-width: 37.5em) {
+    max-height: 120rem;
   }
 }

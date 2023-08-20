@@ -10,6 +10,9 @@
   flex-direction: column;
   position: relative;
   gap: 6.4rem;
+  @media screen and (max-width: 59.3em) {
+    background-color: $color-background-dark;
+  }
 
   &__header {
     background-color: ($color-white);
@@ -81,6 +84,9 @@
         box-shadow: 0 0.1rem 0.5rem $color-white;
       }
     }
+    @media screen and (max-width: 25.625em) {
+      background-color: $color-background-dark;
+    }
   }
 
   &__form-holder {
@@ -91,6 +97,14 @@
     align-items: center;
     max-width: 186rem;
     padding: 4.8rem;
+
+    @media screen and (max-width: 59.3em) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2.4rem;
+    }
   }
 
   &__form {
@@ -124,6 +138,11 @@
     object-fit: cover;
     // clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     overflow: hidden;
+    @media screen and (max-width: 25.625em) {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
 
     &::after {
       position: absolute;
