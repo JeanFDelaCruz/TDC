@@ -73,12 +73,6 @@
   &:hover {
     color: $color-secondary;
   }
-
-  @media screen and (max-width: 25.625em) {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-  }
 }
 .testimonial--button-next {
   top: 50%;
@@ -96,6 +90,10 @@
   }
   @media screen and (max-width: 37.5em) {
     right: -3%;
+  }
+
+  @media screen and (max-width: 25.625em) {
+    right: -1%;
   }
 }
 .testimonial--button-prev {
@@ -118,6 +116,9 @@
   }
   @media screen and (max-width: 37.5em) {
     left: -6%;
+  }
+  @media screen and (max-width: 25.625em) {
+    right: -2%;
   }
 }
 
